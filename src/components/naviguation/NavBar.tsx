@@ -1,5 +1,6 @@
 import SliderTheme from "./SliderTheme";
 import TypewriterText from "../ui/TypewriterText";
+import SliderLanguage from "./SliderLanguage";
 
 function NavBar() {
   return (
@@ -21,6 +22,7 @@ function NavBar() {
             <a href="#contact" className="hover:text-primary-600 dark:hover:text-primary-300 transition-colors">Contact</a>
           </div>
           <SliderTheme />
+          <SliderLanguage />
         </div>
       </div>
     </nav>

@@ -1,15 +1,19 @@
 import { BriefcaseBusiness, Languages, MapPin, GraduationCap } from "lucide-react";
+import { useLanguage } from '../../contexts/language/useLanguage';
 
 import TypewriterText from "../ui/TypewriterText";
 
-function SectionPresensation() {
+function SectionPresensation()
+{
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="pt-32 pb-20 px-6 max-w-5xl mx-auto flex flex-col justify-center min-h-[85vh]">
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
 
     <div className="lg:col-span-2 flex flex-col justify-center">
       <TypewriterText
-        text="Bonjour, je m'appelle"
+        text={t.about.title}
         className="font-mono text-sm text-primary dark:text-primary-300 mb-3"
         typingSpeed={65}
         startDelay={120}
@@ -20,20 +24,11 @@ function SectionPresensation() {
         Yanis Mignot
       </h1>
       <h2 className="text-2xl md:text-3xl font-bold text-slate-500 dark:text-slate-400 mb-6">
-        Développeur Software &amp; Fullstack
+        {t.about.subtitle}
       </h2>
 
       <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
-        Actuellement en 4ème année de mon cursus à <span className="text-slate-900 dark:text-white font-semibold">Epitech Lyon</span>,
-        je réalise également un double diplôme à <span className="text-slate-900 dark:text-white font-semibold">Heriot-Watt University</span> à Édimbourg
-        afin d'obtenir un double diplôme en <span className="text-slate-900 dark:text-white font-semibold">Software Engineering</span>.
-        <br />
-        Je conçois et développe des applications performantes, du schéma de base de données jusqu'à l'interface utilisateur.
-        Fort de mes expériences en entreprise, notamment sur des architectures
-        <span className="font-mono text-sm bg-slate-100 dark:bg-slate-900 px-1 py-0.5 rounded text-primary">NestJS</span>,
-        <span className="font-mono text-sm bg-slate-100 dark:bg-slate-900 px-1 py-0.5 rounded text-primary">React</span>
-        et <span className="font-mono text-sm bg-slate-100 dark:bg-slate-900 px-1 py-0.5 rounded text-primary">Symfony</span>,
-        je suis passionné par l'écosystème TypeScript.
+        {t.about.description}
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-sm border-t border-slate-200/80 dark:border-slate-800/80 pt-6">
@@ -42,8 +37,8 @@ function SectionPresensation() {
             <MapPin className="size-4" />
           </span>
           <div className="leading-tight">
-            <div className="font-medium text-slate-900 dark:text-white">Lyon (69), France</div>
-            <div className="text-slate-500 dark:text-slate-400">Basé en France, ouvert aux projets à distance</div>
+            <div className="font-medium text-slate-900 dark:text-white">{t.about.cardLocation.title}</div>
+            <div className="text-slate-500 dark:text-slate-400">{t.about.cardLocation.subtitle}</div>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-white/70 dark:bg-slate-950/40 px-4 py-3 shadow-sm shadow-slate-200/40 dark:shadow-none backdrop-blur-sm">
@@ -51,8 +46,8 @@ function SectionPresensation() {
             <GraduationCap className="size-4" />
           </span>
           <div className="leading-tight">
-            <div className="font-medium text-slate-900 dark:text-white">Double diplôme en cours</div>
-            <div className="text-slate-500 dark:text-slate-400">Epitech Lyon + Heriot-Watt University</div>
+            <div className="font-medium text-slate-900 dark:text-white">{t.about.cardEducation.title}</div>
+            <div className="text-slate-500 dark:text-slate-400">{t.about.cardEducation.subtitle}</div>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-white/70 dark:bg-slate-950/40 px-4 py-3 shadow-sm shadow-slate-200/40 dark:shadow-none backdrop-blur-sm">
@@ -60,8 +55,8 @@ function SectionPresensation() {
             <BriefcaseBusiness className="size-4" />
           </span>
           <div className="leading-tight">
-            <div className="font-medium text-slate-900 dark:text-white">Disponible pour de futurs projets</div>
-            <div className="text-slate-500 dark:text-slate-400">Freelance, stage ou mission</div>
+            <div className="font-medium text-slate-900 dark:text-white">{t.about.cardAvailability.title}</div>
+            <div className="text-slate-500 dark:text-slate-400">{t.about.cardAvailability.subtitle}</div>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-white/70 dark:bg-slate-950/40 px-4 py-3 shadow-sm shadow-slate-200/40 dark:shadow-none backdrop-blur-sm">
@@ -69,18 +64,18 @@ function SectionPresensation() {
             <Languages className="size-4" />
           </span>
           <div className="leading-tight">
-            <div className="font-medium text-slate-900 dark:text-white">Français natif, anglais B2</div>
-            <div className="text-slate-500 dark:text-slate-400">Communication fluide en équipe internationale</div>
+            <div className="font-medium text-slate-900 dark:text-white">{t.about.cardLanguage.title}</div>
+            <div className="text-slate-500 dark:text-slate-400">{t.about.cardLanguage.subtitle}</div>
           </div>
         </div>
       </div>
 
       <div className="flex flex-wrap gap-4">
         <a href="#projects" className="px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white transition-all rounded-lg font-semibold shadow-lg shadow-primary-700/30">
-          Voir mes projets
+          {t.about.btnProjects}
         </a>
         <a href="#contact" className="px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all rounded-lg font-semibold border border-slate-200 dark:border-slate-700">
-          Me contacter
+          {t.about.btnContact}
         </a>
       </div>
     </div>
@@ -96,7 +91,7 @@ function SectionPresensation() {
       </div>
 
       <div className="flex flex-wrap justify-center gap-2 max-w-xs">
-        {["Autonome", "Esprit d'équipe", "Curieux", "Rigoureux", "Communication"].map((skill) => (
+        {t.about.softSkills.map((skill) => (
           <span
             key={skill}
             className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-800/60"

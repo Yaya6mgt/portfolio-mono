@@ -1,5 +1,5 @@
 import { Laptop, Moon, Sun } from 'lucide-react';
-import { useTheme } from '../../contexts/useTheme';
+import { useTheme } from '../../contexts/theme/useTheme';
 
 const THEME_OPTIONS = [
   { key: 'light', label: 'Theme clair', Icon: Sun, activeText: 'text-utils-sun' },

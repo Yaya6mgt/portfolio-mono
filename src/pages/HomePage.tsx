@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import NavBar from '../components/naviguation/NavBar';
 import SectionPresensation from '../components/presensation/SectionPresensation';
+import { useLanguage } from '../contexts/language/useLanguage';
 
 interface Project {
   title: string;
@@ -32,6 +33,8 @@ const PROJECTS: Project[] = [
 
 export default function HomePage() {
   const [filter, setFilter] = useState<'all' | 'web' | 'mobile' | 'back'>('all');
+
+  const { t } = useLanguage();
 
   const filteredProjects =
     filter === 'all' ? PROJECTS : PROJECTS.filter((project) => project.category === filter);
@@ -110,7 +113,7 @@ export default function HomePage() {
       </section>
 
       <footer className="py-8 border-t border-slate-200 dark:border-slate-900 text-center text-xs text-slate-400 dark:text-slate-600 font-mono">
-        Technologies utilisées : React, TypeScript, TailwindCSS, Vite.<br />© {new Date().getFullYear()} - Conçu par Yanis Mignot. Tous droits réservés.
+        {t.footer.technologies}<br />{t.footer.copyright}
       </footer>
     </div>
   );
