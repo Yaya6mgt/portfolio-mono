@@ -76,9 +76,6 @@ function NavBar() {
           <hr className="border-slate-200 dark:border-slate-800/60" />
 
           <div className="flex items-center justify-between p-3.5 bg-slate-100/60 dark:bg-slate-950/40 rounded-2xl border border-slate-200/40 dark:border-slate-800/40">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-              Settings
-            </span>
             <div className="flex items-center gap-5">
               <SliderTheme />
               <SliderLanguage />
