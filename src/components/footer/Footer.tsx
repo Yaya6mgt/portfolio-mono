@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 border-t border-slate-200 dark:border-slate-800/60 transition-colors">
 
-      <div className="px-6 max-w-5xl mx-auto text-center py-16 sm:py-20">
+      <div id="contact" className="px-6 max-w-5xl mx-auto text-center py-16 sm:py-20">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
           {t.toWork.title}
         </h2>
