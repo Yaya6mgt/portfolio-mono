@@ -1,8 +1,14 @@
 import type { ReactNode } from "react";
+import type { ProjectText } from "../../data/projects";
 
 export type Language = 'fr' | 'en';
 
 export interface Translations {
+  navbar: {
+    presentation: string;
+    projects: string;
+    contact: string;
+  };
   about: {
     title: string;
     subtitle: string;
@@ -15,6 +21,18 @@ export interface Translations {
     btnContact: string;
     softSkills: string[];
   };
+  project: {
+    title: string;
+    subtitle: string;
+    all: string;
+    projects: Record<string, ProjectText>;
+    modal: {
+      keyFeatures: string;
+      personalNote: string;
+      sourceCode: string;
+      urlProject: string;
+    };
+  }
   footer: {
     technologies: string;
     copyright: string;
@@ -23,6 +41,11 @@ export interface Translations {
 
 export const translations: Record<Language, Translations> = {
   fr: {
+    navbar: {
+      presentation: "Présentation",
+      projects: "Projets",
+      contact: "Contact"
+    },
     about: {
       title: "Bonjour, je m'appelle",
       subtitle: "Développeur Software & Fullstack",
@@ -60,12 +83,118 @@ export const translations: Record<Language, Translations> = {
       btnContact: "Me contacter",
       softSkills: ["Autonome", "Esprit d'équipe", "Curieux", "Rigoureux", "Communication"],
     },
+    project: {
+      title: "Mes réalisations",
+      subtitle: "Filtrer mes projets par domaine de compétences :",
+      all: "Tous",
+      projects: {
+        "portfolio": {
+          title: "Portfolio Monopage",
+          description: "Mon site vitrine personnel responsive, moderne et entièrement internationalisé.",
+          longDescription: `Ce portfolio a été conçu pour centraliser et mettre en valeur mes compétences de développeur Fullstack à travers une expérience utilisateur fluide et soignée.
+          Il est développé en React avec TypeScript pour garantir un code robuste et typé, et utilise Tailwind CSS pour un design moderne, épuré et adaptatif (responsive).
+          Pour optimiser l'organisation, j'ai isolé la logique des données techniques de la logique d'affichage, permettant une maintenance simplifiée du site.
+          L'application intègre également un système de bascule de thèmes (Sombre / Clair / Système) basé sur le stockage local et les préférences du navigateur.
+          Afin d'assurer une visibilité internationale auprès des recruteurs et clients, j'ai mis en place un système multilingue complet développé sur-mesure sans dépendance lourde.`,
+          personalNote: `Ce projet m'a permis de mettre en pratique les bonnes pratiques de développement Front-end modernes et de configurer une chaîne de linting stricte avec ESLint 9.
+          C'est une vitrine vivante que je vais continuer à faire évoluer au fil de mes projets Web, Mobiles et Back-end.`,
+          features: [
+            "Architecture Single Page Application (SPA) fluide",
+            "Système multilingue (FR/EN) sur-mesure via les Context de React",
+            "Gestionnaire de thèmes (Light / Dark / System) avec persistance locale",
+            "Filtrage dynamique et typé des projets par domaine de compétences",
+            "Configuration ESLint 9 (Flat Config) pour un code propre et standardisé"
+          ]
+        },
+        "ssl-monitor": {
+          title: "SSL Monitor",
+          description: "Application de surveillance des certificats SSL pour les sites web.",
+          longDescription: `SSL Monitor est une application qui surveille les certificats SSL des sites web et envoie des notifications lorsque ceux-ci sont sur le point d'expirer.
+          Elle utilise ReactJS pour l'interface utilisateur, Node.js et Express pour le backend, PostgreSQL pour la base de données, et est entièrement développée en TypeScript avec TailwindCSS pour le style.
+          L'application est conçue pour être déployée facilement avec Docker et Docker Compose, permettant une installation rapide et une gestion simplifiée des dépendances.
+          J'ai également mit en place un traitement des erreurs sans API externe, il permet de voir tout de même la majorité des erreurs de certificats SSL, même si certains sites web ne sont pas accessibles.
+          Il y'a également un système de recherche de site web directement avec un IP, ce qui permet de trouver le site web associé à une IP, même si le site web n'est pas accessible directement.
+          Il y'a tout un système de dashboard afin de surveiller différents nom de domaine, nom de domaine groupable par serveur également, ce qui permet de surveiller plusieurs sites web sur le même serveur.
+          Une gestion d'utilisateur est également présente, avec différent rôles afin de gérer les droits d'accès aux différentes fonctionnalités de l'application.`,
+          personalNote: `Ce projet m'a permis de renforcer mes compétences en développement fullstack et en gestion de bases de données, tout en mettant l'accent sur la sécurité et la fiabilité des applications web.
+          Ce projet est aujourd'hui mit en production en interne dans une entreprise chez laquelle j'ai travaillé.
+          Je suis fier de voir mon travail utilisé dans un contexte réel et d'avoir contribué à améliorer la sécurité des sites web.`,
+          features: [
+            "Surveillance en temps réel des certificats SSL",
+            "Notifications par email avant l'expiration",
+            "Interface utilisateur réactive et moderne",
+            "Gestion des utilisateurs et des sites surveillés",
+            "Déploiement facile avec Docker et Docker Compose",
+
+          ]
+        },
+        "cabanesDB": {
+          title: "CabanesDB",
+          description: "Site vitrines pour une psycologue avec prise de rendez-vous en ligne.",
+          longDescription: `CabanesDB est un site vitrine pour une psychologue, offrant la possibilité de réserver des séances en ligne.
+          Le site est développé avec HTML, CSS et JavaScript pour le frontend, et utilise Node.js et Express pour le backend.
+          Il est conçu pour être responsive et accessible sur tous les appareils.
+          Il permet aux utilisateurs de consulter les informations sur les services proposés, de prendre rendez-vous en ligne et de recevoir des confirmations par email.
+          Le site est optimisé pour le référencement et la performance, garantissant une expérience utilisateur fluide et agréable.
+          Il est également sécurisé pour protéger les données des utilisateurs et assurer la confidentialité des informations personnelles.`,
+          personalNote: `Premier vrai projet réalisé en freelance, il m'a permis de comprendre les besoins des clients et de créer une solution adaptée à leurs attentes, tout en respectant les délais et le budget.
+          Aujourd'hui je n'utiliserais plus cette technologie pour mes projets, mais je suis fier de ce que j'ai accompli avec CabanesDB. Parfois, il est important de se rappeler d'où l'on vient et de célébrer ses réussites, même si elles ne sont plus à la pointe de la technologie.`,
+          features: [
+            "Site vitrine responsive et moderne",
+            "Système de réservation en ligne pour les séances",
+            "Interface utilisateur intuitive et facile à naviguer",
+            "Optimisation pour le référencement et la performance du site",
+          ]
+        },
+        "koudmain": {
+          title: "Koudmain",
+          description: "Application complète pour le recrutement instantané dans le secteur des CHR.",
+          longDescription: `Koudmain est une application complète pour le recrutement instantané dans le secteur des CHR (Cafés, Hôtels, Restaurants).
+          Le but est de proposé des CDDU (Contrat de travail à durée déterminée d'usage) aux candidats et de permettre aux recruteurs de trouver rapidement des candidats qualifiés pour leurs besoins en personnel.
+          Elle est découpée en trois parties : deux applications mobiles en React Native (une pour les candidats et une pour les recruteurs), un site vitrine et deux backends (un pour l'API métier en NestJS et un pour les websockets et le matching en Golang).
+          Tout se système est développé en TypeScript et utilise TailwindCSS pour le style.
+          Les applications mobiles sont concues pour être intuitives et faciles à utiliser, permettant aux candidats de postuler rapidement et aux recruteurs de trouver les meilleurs talents en temps réel.
+          Elles sont également sur un monorépo avec Turborepo, ce qui permet de partager du code entre les deux applications et d'optimiser le développement.
+          Le backend en NestJS gère les données et la logique métier, tandis que le backend en Golang gère les websockets, les notifications et le matching entre candidats et recruteurs.
+          L'ensemble du système est conçu pour être scalable et performant, permettant de gérer un grand nombre d'utilisateurs simultanément.
+          Une CI/CD est également mise en place pour automatiser les tests, le build et le déploiement des applications et des backends grâce à un répo qui sert uniquement au build et au déploiement tournant avec Docker Compose.
+          Il y'a également un système de documentation pour les développeurs, permettant de comprendre rapidement l'architecture et le fonctionnement de l'application.
+          On a decidé d'utiliser Documenso pour tout ce qui touchera à la signature électronique et à la gestion des documents, ce qui permet de gérer les contrats et les documents administratifs de manière sécurisée et conforme aux régulations en vigueur.`,
+          personalNote: `Nous sommes une équipe de 5 personnes pour mener à bien ce projet.  Ce projet est dans le cadre de notre EIP (Epitech Innovative Project) et il sera présenté d'ici 2028 devant un jury d'experts. Il est donc en constante évolution et nous travaillons dur pour le rendre le plus performant et le plus complet possible.
+          C'est notre projet de fin d'études et nous sommes très fiers de ce que nous avons accompli jusqu'à présent. Nous avons appris énormément de choses sur le développement d'applications complètes et sur la gestion de projet en équipe.
+          Il nous a également permis de gagner en compétence sur toute la partie marketing et buisness, ce qui est très important pour la réussite d'un projet et pour trouver des financements pour le développer.
+          Nous sommes impatients de continuer à travailler sur ce projet et de le présenter devant le jury d'experts. Nous espérons que notre travail sera apprécié et que nous pourrons continuer à développer Koudmain après notre diplôme.
+          Le site vitrine est déjà en ligne mais ne représente absolument pas l'application finale, il est là pour présenter le projet et donner envie aux investisseurs et aux candidats de nous rejoindre.`,
+          features: [
+            "Application mobile pour les candidats et les recruteurs",
+            "Application web pour les recruteurs et le site vitrine",
+            "Backend en NestJS pour l'API métier",
+            "Backend en Golang pour les websockets et le matching",
+            "Monorépo avec Turborepo pour partager du code entre les applications",
+            "CI/CD pour automatiser les tests, le build et le déploiement",
+            "Système de documentation pour les développeurs",
+            "Intégration de Documenso pour la signature électronique et la gestion des documents",
+          ]
+        }
+      },
+      modal: {
+        keyFeatures: "Fonctionnalités",
+        personalNote: "Note personnelle",
+        sourceCode: "Code source",
+        urlProject: "Lien du projet"
+      },
+    },
     footer: {
       technologies: "Technologies utilisées : React, TypeScript, TailwindCSS, Vite.",
       copyright: "© " + new Date().getFullYear() + " - Conçu par Yanis Mignot. Tous droits réservés."
     }
   },
   en: {
+    navbar: {
+      presentation: "Presentation",
+      projects: "Projects",
+      contact: "Contact"
+    },
     about: {
       title: "Hi, my name is",
       subtitle: "Software & Fullstack Developer",
@@ -102,6 +231,106 @@ export const translations: Record<Language, Translations> = {
       btnProjects: "View my projects",
       btnContact: "Contact me",
       softSkills: ["Autonomous", "Team Player", "Curious", "Rigorous", "Communication"],
+    },
+    project: {
+      title: "My Projects",
+      subtitle: "Filter my projects by skill domain:",
+      all: "All",
+      projects: {
+        "portfolio": {
+          title: "Single-Page Portfolio",
+          description: "My personal showcase website: responsive, modern, and fully internationalized.",
+          longDescription: `This portfolio was designed to centralize and highlight my skills as a Fullstack developer through a smooth and polished user experience.
+          It is built using React and TypeScript to ensure a robust, type-safe codebase, and leverages Tailwind CSS for a modern, clean, and fully responsive design.
+          To optimize organization, I isolated the technical data logic from the UI logic, allowing for simplified website maintenance.
+          The application also integrates a theme switching system (Dark / Light / System) based on local storage and native browser preferences.
+          To ensure international visibility for recruiters and clients, I implemented a complete custom-built multilingual system without relying on heavy third-party libraries.`,
+          personalNote: `This project allowed me to apply modern Front-end development best practices and set up a strict linting pipeline with ESLint 9.
+          It serves as a living showcase that I will continue to evolve alongside my Web, Mobile, and Back-end projects.`,
+          features: [
+            "Smooth Single Page Application (SPA) architecture",
+            "Custom multilingual system (FR/EN) via React Context API",
+            "Theme management (Light / Dark / System) with local persistence",
+            "Dynamic and type-safe project filtering by skill domain",
+            "ESLint 9 (Flat Config) setup for clean and standardized code"
+          ]
+        },
+        "ssl-monitor": {
+          title: "SSL Monitor",
+          description: "SSL certificate monitoring application for websites.",
+          longDescription: `SSL Monitor is an application that monitors SSL certificates of websites and sends notifications when they are about to expire.
+          It uses ReactJS for the user interface, Node.js and Express for the backend, PostgreSQL for the database, and is fully developed in TypeScript with TailwindCSS for styling.
+          The application is designed for easy deployment with Docker and Docker Compose, allowing for quick installation and simplified dependency management.
+          I also implemented error handling without an external API, which allows most SSL certificate errors to be seen even if some websites are not accessible.
+          There is also a search system for websites directly by IP, which allows finding the website associated with an IP even if the website is not directly accessible.
+          There is a whole dashboard system to monitor different domain names, groupable by server as well, allowing monitoring of multiple websites on the same server.
+          User management is also present, with different roles to manage access rights to the various features of the application.`,
+          personalNote: `This project allowed me to strengthen my skills in full-stack development and database management, while focusing on the security and reliability of web applications.
+          This project is now deployed internally in a company where I worked.
+          I am proud to see my work used in a real context and to have contributed to improving the security of websites.`,
+          features: [
+            "Real-time SSL certificate monitoring",
+            "Email notifications before expiration",
+            "Responsive and modern user interface",
+            "User and monitored site management",
+            "Easy deployment with Docker and Docker Compose",
+          ]
+        },
+        "cabanesDB": {
+          title: "CabanesDB",
+          description: "Showcase website for a psychologist with online appointment booking.",
+          longDescription: `CabanesDB is a showcase website for a psychologist, offering the ability to book sessions online.
+          The site is developed with HTML, CSS, and JavaScript for the frontend, and uses Node.js and Express for the backend.
+          It is designed to be responsive and accessible on all devices.
+          It allows users to view information about the services offered, book appointments online, and receive confirmations via email.
+          The site is optimized for SEO and performance, ensuring a smooth and pleasant user experience.
+          It is also secured to protect user data and ensure the confidentiality of personal information.`,
+          personalNote: `My first real freelance project, it allowed me to understand client needs and create a solution tailored to their expectations while respecting deadlines and budget.
+          Today I would no longer use this technology for my projects, but I am proud of what I accomplished with CabanesDB. Sometimes it's important to remember where you come from and celebrate your successes, even if they are no longer at the cutting edge of technology.`,
+          features: [
+            "Responsive and modern showcase website",
+            "Online booking system for sessions",
+            "Intuitive and easy-to-navigate user interface",
+            "Optimized for SEO and site performance",
+          ]
+        },
+        "koudmain": {
+          title: "Koudmain",
+          description: "Comprehensive application for instant recruitment in the hospitality sector.",
+          longDescription: `Koudmain is a comprehensive application for instant recruitment in the hospitality sector (Cafés, Hotels, Restaurants).
+          The goal is to offer CDDU (Fixed-term employment contracts) to candidates and allow recruiters to quickly find qualified candidates for their staffing needs.
+          It is divided into three parts: two mobile applications in React Native (one for candidates and one for recruiters), a showcase website, and two backends (one for the business API in NestJS and one for websockets and matching in Golang).
+          The entire system is developed in TypeScript and uses TailwindCSS for styling.
+          The mobile applications are designed to be intuitive and easy to use, allowing candidates to apply quickly and recruiters to find the best talent in real-time.
+          They are also in a monorepo with Turborepo, which allows sharing code between the two applications and optimizing development.
+          The NestJS backend manages data and business logic, while the Golang backend handles websockets, notifications, and matching between candidates and recruiters.
+          The entire system is designed to be scalable and performant, allowing for a large number of simultaneous users.
+          A CI/CD pipeline is also in place to automate testing, building, and deployment of the applications and backends through a repository dedicated solely to building and deploying with Docker Compose.
+          There is also a documentation system for developers, allowing them to quickly understand the architecture and functionality of the application.
+          Documenso is integrated for electronic signatures and document management, enabling secure handling of contracts and administrative documents in compliance with current regulations.`,
+          personalNote: `We are a team of 5 people working on this project. This project is part of our EIP (Epitech Innovative Project) and will be presented by 2028 before a panel of experts. It is therefore constantly evolving, and we are working hard to make it as efficient and comprehensive as possible.
+          This is our final year project, and we are very proud of what we have accomplished so far. We have learned a lot about developing complete applications and managing projects in a team.
+          It has also allowed us to gain skills in marketing and business, which are crucial for the success of a project and for securing funding to develop it further.
+          We are eager to continue working on this project and present it before the panel of experts. We hope our work will be appreciated and that we can continue developing Koudmain after graduation.
+          The showcase website is already live but does not represent the final application; it is there to present the project and attract investors and candidates to join us.`,
+          features: [
+            "Mobile application for candidates and recruiters",
+            "Web application for recruiters and showcase website",
+            "NestJS backend for business API",
+            "Golang backend for websockets and matching",
+            "Monorepo with Turborepo to share code between applications",
+            "CI/CD pipeline to automate testing, building, and deployment",
+            "Documentation system for developers",
+            "Integration of Documenso for electronic signatures and document management",
+          ]
+        }
+      },
+      modal: {
+        keyFeatures: "Key Features",
+        personalNote: "Personal Note",
+        sourceCode: "Source Code",
+        urlProject: "Project Link"
+      },
     },
     footer: {
       technologies: "Technologies used: React, TypeScript, TailwindCSS, Vite.",
