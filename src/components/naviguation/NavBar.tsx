@@ -10,7 +10,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-50 px-6 py-4">
+    <nav className="fixed top-0 w-full bg-gray-50/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-50 px-6 py-4">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
 
         <div className="shrink-0">

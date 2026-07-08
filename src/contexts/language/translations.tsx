@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { ProjectText } from "../../data/projects";
+import type { ExperienceText } from "../../data/experiences";
 
 export type Language = 'fr' | 'en';
 
@@ -20,6 +21,8 @@ export interface Translations {
     btnProjects: string;
     btnContact: string;
     softSkills: string[];
+    viewCv: string;
+    downloadCv: string;
   };
   project: {
     title: string;
@@ -32,6 +35,14 @@ export interface Translations {
       sourceCode: string;
       urlProject: string;
     };
+  }
+  experience: {
+    title: string;
+    subtitle?: string;
+    all: string;
+    work: string;
+    education: string;
+    experiences: Record<string, ExperienceText>;
   }
   toWork: {
     title: string;
@@ -87,6 +98,8 @@ export const translations: Record<Language, Translations> = {
       btnProjects: "Voir mes projets",
       btnContact: "Me contacter",
       softSkills: ["Autonome", "Esprit d'équipe", "Curieux", "Rigoureux", "Communication"],
+      viewCv: "Voir mon CV",
+      downloadCv: "Télécharger le CV",
     },
     project: {
       title: "Mes réalisations",
@@ -220,6 +233,51 @@ export const translations: Record<Language, Translations> = {
         urlProject: "Lien du projet"
       },
     },
+    experience: {
+      title: "Parcours & Expériences",
+      subtitle: "Découvrez mes jalons scolaires et professionnels.",
+      all: "Tous",
+      work: "Expériences Pro",
+      education: "Études / Formations",
+      experiences: {
+        "onlineformapro-dev": {
+          date: "Sept. 2025 - Août 2026",
+          title: "Développeur Fullstack",
+          description: "Développement de fonctionnalités en PHP/Symfony. Intégration front/back et exécution en autonomie de missions. Développement d'applications web/mobile avec ReactJS pour le front et NestJS/NodeTS pour le backend.",
+          tags: ["Symfony", "ReactJS", "NestJS", "Node.js", "TypeScript"]
+        },
+        "ybrush-it": {
+          date: "Juin - Déc. 2024",
+          title: "Responsable IT",
+          description: "Gestion et évolution du site e-commerce, mise en place d'automatisations poussées (commandes, facturation, stocks, livraisons) et conception d'un dashboard marketing global alimenté via API.",
+          tags: ["E-commerce", "Automations", "Dashboards", "APIs"]
+        },
+        "epitech-3": {
+          date: "2023 - 2028",
+          title: "Diplôme d'Ingénieur Logiciel (3ème année)",
+          description: "Cursus Expert en Technologies de l'Information. Apprentissage intensif par projets (Piscines, AREA, etc.), gestion de projet Agile, architecture logicielle et DevOps.",
+          tags: ["Algorithmique", "Architecture Web", "Génie Logiciel", "Agile"]
+        },
+        "besancon-maths": {
+          date: "2020 - 2023",
+          title: "Bac +2 Mathématiques & Informatique",
+          description: "Formation académique approfondie centrée sur les concepts de l'informatique théorique, le développement bas niveau et les mathématiques appliquées.",
+          tags: ["Maths", "C/C++", "Structures de données"]
+        },
+        "stellantis-job": {
+          date: "Saisonnier 2021 - 2023",
+          title: "Manutentionnaire & Gestionnaire de stock",
+          description: "Emplois d'été. Logistique industrielle, gestion des flux de pièces de rechange et rigueur opérationnelle dans un environnement à forte cadence.",
+          tags: ["Logistique", "Rigueur", "Travail d'équipe"]
+        },
+        "lycee-s": {
+          date: "2019",
+          title: "Baccalauréat Scientifique (S)",
+          description: "Obtention du diplôme d'études secondaires, spécialisation scientifique.",
+          tags: ["Sciences", "Logique"]
+        }
+      },
+    },
     toWork: {
       title: "On travaille ensemble ?",
       subtitle: "Je suis actuellement disponible pour de nouvelles opportunités en CDI ou en Freelance.",
@@ -272,6 +330,8 @@ export const translations: Record<Language, Translations> = {
       btnProjects: "View my projects",
       btnContact: "Contact me",
       softSkills: ["Autonomous", "Team Player", "Curious", "Rigorous", "Communication"],
+      viewCv: "View Resume",
+      downloadCv: "Download CV",
     },
     project: {
       title: "My Projects",
@@ -402,6 +462,51 @@ export const translations: Record<Language, Translations> = {
         personalNote: "Personal Note",
         sourceCode: "Source Code",
         urlProject: "Project Link"
+      },
+    },
+    experience: {
+      title: "Journey & Experiences",
+      subtitle: "Discover my academic and professional milestones.",
+      all: "All",
+      work: "Work Experience",
+      education: "Education & Training",
+      experiences: {
+        "onlineformapro-dev": {
+          date: "Sept. 2025 - Aug. 2026",
+          title: "Fullstack Developer",
+          description: "Developing features using PHP/Symfony. Front/back integration and autonomous task execution. Developing web/mobile applications with ReactJS for the frontend and NestJS/NodeTS for the backend.",
+          tags: ["Symfony", "ReactJS", "NestJS", "Node.js", "TypeScript"]
+        },
+        "ybrush-it": {
+          date: "June - Dec. 2024",
+          title: "IT Manager",
+          description: "Management and evolution of the e-commerce store, implementation of advanced automations (orders, billing, stocks, shipping) and design of a global marketing dashboard powered via API.",
+          tags: ["E-commerce", "Automations", "Dashboards", "APIs"]
+        },
+        "epitech-3": {
+          date: "2023 - 2028",
+          title: "Software Engineering Degree (3rd year)",
+          description: "Expert in Information Technologies curriculum. Intensive project-based learning (Piscines, AREA, etc.), Agile project management, software architecture, and DevOps.",
+          tags: ["Algorithms", "Web Architecture", "Software Engineering", "Agile"]
+        },
+        "besancon-maths": {
+          date: "2020 - 2023",
+          title: "Mathematics & Computer Science Undergraduate Degree",
+          description: "In-depth academic training focused on theoretical computer science concepts, low-level development, and applied mathematics.",
+          tags: ["Maths", "C/C++", "Data Structures"]
+        },
+        "stellantis-job": {
+          date: "Seasonal 2021 - 2023",
+          title: "Warehouse Worker & Stock Manager",
+          description: "Summer jobs. Industrial logistics, managing spare parts workflows and operational discipline in a fast-paced environment.",
+          tags: ["Logistics", "Discipline", "Teamwork"]
+        },
+        "lycee-s": {
+          date: "2019",
+          title: "Scientific High School Diploma",
+          description: "Graduated secondary education with a focus on scientific fields.",
+          tags: ["Sciences", "Logic"]
+        }
       },
     },
     toWork: {

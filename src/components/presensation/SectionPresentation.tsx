@@ -1,11 +1,14 @@
-import { BriefcaseBusiness, Languages, MapPin, GraduationCap } from "lucide-react";
+import { useState } from "react";
+import { BriefcaseBusiness, Languages, MapPin, GraduationCap, FileText } from "lucide-react";
 import { useLanguage } from '../../contexts/language/useLanguage';
 
 import TypewriterText from "../ui/TypewriterText";
+import CvModal from "./cv/CvModal";
 
-function SectionPresensation()
+function SectionPresentation()
 {
   const { t } = useLanguage();
+  const [isCvOpen, setIsCvOpen] = useState(false);
 
   return (
     <section id="about" className="pt-32 pb-20 px-6 max-w-5xl mx-auto flex flex-col justify-center min-h-[85vh]">
@@ -76,6 +79,13 @@ function SectionPresensation()
             <a href="#contact" className="px-6 py-3 bg-slate-100 dark:bg-gray-900 hover:bg-slate-200 dark:hover:bg-gray-800 transition-all rounded-lg font-semibold border border-slate-200 dark:border-gray-700">
               {t.about.btnContact}
             </a>
+            <button
+              onClick={() => setIsCvOpen(true)}
+              className="flex items-center gap-2.5 px-6 py-3 bg-slate-100 dark:bg-gray-900 hover:bg-slate-200 dark:hover:bg-gray-800 transition-all rounded-lg font-semibold border border-slate-200 dark:border-gray-700 cursor-pointer"
+            >
+              <FileText className="size-4.5 text-primary-400" />
+              {t.about?.viewCv || "Mon CV"}
+            </button>
           </div>
         </div>
 
@@ -102,8 +112,9 @@ function SectionPresensation()
         </div>
 
       </div>
+      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
     </section>
   );
 }
 
-export default SectionPresensation;
+export default SectionPresentation;

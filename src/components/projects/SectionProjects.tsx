@@ -21,7 +21,7 @@ export default function SectionProjects() {
   const activeProjectText = activeProject ? t.project.projects[activeProject.id] : null;
 
   return (
-    <section id="projects" className="py-20 bg-slate-50/50 dark:bg-gray-800/50 border-y border-slate-100 dark:border-slate-900 overflow-hidden">
+    <section id="projects" className="py-20 bg-gray-100 dark:bg-gray-900/50 border-y border-slate-100 dark:border-slate-900 overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
