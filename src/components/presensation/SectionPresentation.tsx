@@ -93,7 +93,7 @@ function SectionPresentation()
           <div className="relative group w-44 h-44 mb-6">
             <div className="absolute inset-0 bg-linear-to-tr from-primary-500 to-primary-900 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-300"></div>
             <img
-              src="/photo_moi.jpeg"
+              src="photo_moi.jpeg"
               alt="Yanis Mignot"
               className="relative w-full h-full object-cover rounded-full border-2 border-slate-200 dark:border-gray-900 grayscale-20 group-hover:grayscale-0 transition duration-300"
             />

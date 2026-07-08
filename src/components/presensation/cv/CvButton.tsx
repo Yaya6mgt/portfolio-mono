@@ -7,7 +7,7 @@ export default function CvButton() {
   return (
     <div className="flex flex-wrap gap-3 mt-6">
       <a
-        href="/documents/cv-neutral.pdf"
+        href="documents/cv-neutral.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors rounded-xl font-semibold text-sm border border-slate-700/50 shadow-sm"

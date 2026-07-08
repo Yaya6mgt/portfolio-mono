@@ -9,7 +9,7 @@ interface CvModalProps {
 
 export default function CvModal({ isOpen, onClose }: CvModalProps) {
   const { t } = useLanguage();
-  const cvPath = "/documents/cv-neutral.pdf";
+  const cvPath = "documents/cv-neutral.pdf";
 
   useEffect(() => {
     if (isOpen) {
