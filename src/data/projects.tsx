@@ -47,5 +47,17 @@ export const PROJECTS: Project[] = [
     category: [Category.BACK,Category.MOBILE, Category.WEB],
     githubUrl: "https://github.com/Koudmain",
     liveUrl: "https://www.koudmain.fr/"
-  }
+  },
+  {
+    id: "area",
+    tags: ["Node.js", "React", "Kotlin", "Redis", "OAuth2", "TypeScript"],
+    category: [Category.BACK, Category.WEB, Category.MOBILE],
+    githubUrl: "https://github.com/Yaya6mgt/Area-epi",
+  },
+  {
+    id: "chattera",
+    tags: ["Node.js", "React", "React Native", "Expo", "Vite", "WebSockets"],
+    category: [Category.BACK, Category.WEB, Category.MOBILE],
+    githubUrl: "https://github.com/Yaya6mgt/chattera-project",
+  },
 ];

@@ -16,15 +16,15 @@ export default function HomePage() {
       <SectionProjects />
 
       <section id="contact" className="py-20 px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">On travaille ensemble ?</h2>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">{t.toWork.title}</h2>
         <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-8">
-          Je suis actuellement disponible pour de nouvelles opportunités en CDI ou en Freelance.
+          {t.toWork.subtitle}
         </p>
         <a
           href="mailto:yayadeusty@gmail.com"
           className="inline-block px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white transition-all rounded-lg font-semibold shadow-xl shadow-primary-700/30"
         >
-          Envoyer un e-mail
+          {t.toWork.mail}
         </a>
       </section>
 

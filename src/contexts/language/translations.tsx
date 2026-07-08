@@ -33,6 +33,11 @@ export interface Translations {
       urlProject: string;
     };
   }
+  toWork: {
+    title: string;
+    subtitle: string;
+    mail: string;
+  }
   footer: {
     technologies: string;
     copyright: string;
@@ -175,7 +180,38 @@ export const translations: Record<Language, Translations> = {
             "Système de documentation pour les développeurs",
             "Intégration de Documenso pour la signature électronique et la gestion des documents",
           ]
-        }
+        },
+        "area": {
+          title: "AREA",
+          description: "Une plateforme d'automatisation inspirée de Zapier et IFTTT, connectant des API tierces via des systèmes d'Actions/Réactions.",
+          longDescription: `L'AREA (Action REAction Application) est une suite logicielle complète permettant de créer des flux d'automatisation entre différentes plateformes (GitHub, Spotify, Discord, Google...).
+          Le cœur du projet réside dans son architecture backend développée en Node.js (TypeScript) : elle orchestre les protocoles d'authentification OAuth2 pour sécuriser l'accès aux comptes des utilisateurs, surveille en continu les déclencheurs (Actions) et exécute instantanément les conséquences (Réactions).
+          Pour garantir la fiabilité et la performance de ces tâches automatisées en arrière-plan, j'ai intégré une base de données en mémoire Redis pour gérer efficacement les files d'attente et l'exécution asynchrone.
+          Le projet se décline en une interface Web développée sous React et une application mobile native robuste en Kotlin, toutes deux connectées à notre API centrale.`,
+          personalNote: `Ce projet d'Epitech en équipe a été un vrai défi d'architecture logicielle. Gérer de nombreuses API externes, des flux d'authentification OAuth2 variés et l'asynchronisme avec Redis m'a permis de comprendre concrètement les problématiques de scalabilité et de synchronisation des données en temps réel.`,
+          features: [
+            "Architecture modulaire permettant l'ajout rapide de nouveaux services",
+            "Gestion complète du flux d'authentification OAuth2 (multi-plateformes)",
+            "Traitement asynchrone des tâches en arrière-plan propulsé par Redis",
+            "Interface Web responsive (React) et application mobile native (Kotlin)",
+            "Tableau de bord utilisateur pour créer, activer et monitorer les flux"
+          ]
+        },
+        "chattera": {
+          title: "Chattera",
+          description: "Une application de messagerie instantanée cross-platform (Web & Mobile) propulsée par les WebSockets.",
+          longDescription: `Chattera est une plateforme de messagerie complète (type Teams ou Messenger) conçue pour explorer les technologies de communication bidirectionnelle en temps réel.
+          L'écosystème s'appuie sur une API centrale en Node.js utilisant les WebSockets pour la transmission instantanée des messages et des états (comme l'indicateur "en train d'écrire"). L'interface Web est propulsée par Vite (ReactJS) tandis que l'application mobile tourne sous Expo (React Native), partageant une logique de gestion des sockets similaire.
+          Au-delà du texte, j'ai implémenté un système de gestion des médias permettant l'envoi sécurisé et fluide de photos, de documents et de GIFs, ainsi qu'un système complet de gestion de profils et de listes d'amis.`,
+          personalNote: `Ce projet purement personnel m'a permis de me frotter aux problématiques du temps réel. Synchroniser l'état des conversations simultanément sur un navigateur web et une application mobile tout en gérant le transfert de fichiers lourds a été un excellent exercice d'optimisation de flux de données.`,
+          features: [
+            "Communication instantanée et bidirectionnelle via WebSockets",
+            "Partage multimédia riche : images, documents et intégration de GIFs",
+            "Système complet d'authentification et de création de comptes sécurisés",
+            "Gestion sociale : requêtes, ajouts d'amis et statuts de présence",
+            "Application mobile fluide développée avec Expo et interface Web rapide avec Vite"
+          ]
+        },
       },
       modal: {
         keyFeatures: "Fonctionnalités",
@@ -183,6 +219,11 @@ export const translations: Record<Language, Translations> = {
         sourceCode: "Code source",
         urlProject: "Lien du projet"
       },
+    },
+    toWork: {
+      title: "On travaille ensemble ?",
+      subtitle: "Je suis actuellement disponible pour de nouvelles opportunités en CDI ou en Freelance.",
+      mail: "Envoyer un e-mail"
     },
     footer: {
       technologies: "Technologies utilisées : React, TypeScript, TailwindCSS, Vite.",
@@ -323,7 +364,38 @@ export const translations: Record<Language, Translations> = {
             "Documentation system for developers",
             "Integration of Documenso for electronic signatures and document management",
           ]
-        }
+        },
+        "area": {
+          title: "AREA",
+          description: "An automation platform inspired by Zapier and IFTTT, connecting third-party APIs through Action/Reaction systems.",
+          longDescription: `AREA (Action REAction Application) is a comprehensive software suite that enables the creation of automated workflows between various platforms (GitHub, Spotify, Discord, Google...).
+          The core of the project lies in its backend architecture built with Node.js (TypeScript): it orchestrates OAuth2 authentication protocols to secure user accounts, continuously monitors triggers (Actions), and instantly executes consequences (Reactions).
+          To ensure the reliability and performance of these background automation tasks, I integrated a Redis in-memory database to efficiently manage job queues and asynchronous processing.
+          The project features a responsive Web interface developed with React and a robust native Mobile application built in Kotlin, both communicating with our central API.`,
+          personalNote: `This Epitech team project was a true software architecture challenge. Handling multiple external APIs, diverse OAuth2 authentication flows, and asynchronous behavior with Redis gave me a solid, practical understanding of scalability and real-time data synchronization.`,
+          features: [
+            "Modular architecture allowing rapid integration of new microservices",
+            "Comprehensive OAuth2 authentication flow management (multi-platform)",
+            "Asynchronous background task and queue processing powered by Redis",
+            "Responsive Web layout (React) and native Mobile application (Kotlin)",
+            "User dashboard to easily create, trigger, and monitor active workflows"
+          ]
+        },
+        "chattera": {
+          title: "Chattera",
+          description: "A cross-platform instant messaging application (Web & Mobile) powered by WebSockets.",
+          longDescription: `Chattera is a full-featured messaging platform (similar to Teams or Messenger) built to explore modern bidirectional, real-time communication technologies.
+          The ecosystem relies on a central Node.js API leveraging WebSockets for instant message delivery and status updates (such as "typing..." indicators). The Web interface is powered by Vite (ReactJS), while the mobile app runs on Expo (React Native), sharing a cohesive socket management architecture.
+          Beyond text, I implemented a media handling pipeline that allows users to seamlessly send photos, documents, and GIFs, alongside a comprehensive profile and friend-list management system.`,
+          personalNote: `This purely personal project allowed me to dive deep into real-time system architectures. Synchronizing conversation states simultaneously across a web browser and a mobile device while handling heavy file uploads was an incredible exercise in data stream optimization.`,
+          features: [
+            "Instant and bidirectional communication powered by WebSockets",
+            "Rich media sharing: support for images, documents, and GIF integration",
+            "Secure user authentication and full account creation flow",
+            "Social management system: friend requests, friend lists, and online presence",
+            "Smooth mobile experience built with Expo and high-performance web app via Vite"
+          ]
+        },
       },
       modal: {
         keyFeatures: "Key Features",
@@ -331,6 +403,11 @@ export const translations: Record<Language, Translations> = {
         sourceCode: "Source Code",
         urlProject: "Project Link"
       },
+    },
+    toWork: {
+      title: "Shall we work together?",
+      subtitle: "I am currently available for new opportunities in full-time or freelance.",
+      mail: "Send an email"
     },
     footer: {
       technologies: "Technologies used: React, TypeScript, TailwindCSS, Vite.",
